@@ -54,21 +54,30 @@ switch ($subroute) {
                 $parent_child_relations_grouped[$parent_id] = [$child_id];
             }
         }
-        foreach ($root_ids as $root_id) {
-            print_tree_recursive($parent_child_relations_grouped, $rental_properties, $root_id);
-        }
-
         // Acutally found out that if we execute
         // static::$_pdo->query("SELECT parent_id, child_id FROM parent_child_relations")->fetchAll(PDO::FETCH_GROUP);
         // inside the Db object, it will return pretty much the same $parent_child_relations_grouped array.
         // But as we still need to find out root IDs, I decided to leave the current implementation of grouping and filtration.
+
+        foreach ($root_ids as $root_id) {
+            print_tree_recursive($parent_child_relations_grouped, $rental_properties, $root_id);
+        }
+
 
         // echo '<pre>';
         // print_r($parent_child_relations_grouped);
         // echo '</pre>';
 
         break;
-    case 'show_relatives_of':
+    case 'get_all':
+        $rental_properties = Db::select_and_group_by_first_param(['id', 'title', 'shareable'], 'rental_properties');
+
+        // $sql = "SELECT * FROM rental_properties";
+        // $rental_properties = Db::execute($sql);
+        respond_success($rental_properties);
+
+        break;
+    case 'get_relatives_of':
         $rental_property_id = request_param('rental_property_id');
 
         $sql = "SELECT

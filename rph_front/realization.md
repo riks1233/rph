@@ -16,5 +16,5 @@
   - Full dependency tree.
   - Possibility to select property (from the tree) and display its relatives.
 - Management (2 columns)
-  - Add new property.
-  - Move property under a parent.
+  - Create new property.
+  - Move a property under a parent.

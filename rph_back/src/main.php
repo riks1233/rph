@@ -19,7 +19,8 @@ Router::init();
 
 $subroute = Router::pop_next_subroute();
 switch ($subroute) {
-    case 'show_all':
+    case 'get_tree':
+    case 'show_tree':
         $rental_properties = Db::select_and_group_by_first_param(['id', 'title', 'shareable'], 'rental_properties');
         // Mark all existing rental properties as root objects (will filter out non-root objects further along).
         // Exclude shareable rental properties, those can not be root objects.

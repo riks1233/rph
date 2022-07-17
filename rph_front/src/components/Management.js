@@ -51,9 +51,7 @@ const CreateForm = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-
         <div className='vertical-separator--small'></div>
-
         <div className='column-flex-container'>
           <label>Shareable between other rental properties?</label>
           <label className='checkbox-container'>
@@ -105,9 +103,7 @@ const ParentAssignForm = () => {
             )}
           </select>
         </div>
-
         <div className='vertical-separator--small'></div>
-
         <div className='column-flex-container'>
           <label>Choose rental property</label>
           <select onChange={(e) => setRentalPropertyId(e.target.value)}>
@@ -117,7 +113,6 @@ const ParentAssignForm = () => {
             )}
           </select>
         </div>
-
         <input type="submit" value="Assign" />
       </form>
     </div>

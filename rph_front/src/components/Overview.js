@@ -18,25 +18,18 @@ const Overview = () => {
             {Object.entries(rentalProperties).map(([id, data]) =>
               <RentalPropertyListItem key={id} id={id} content={data.title}/>
             )}
-
           </ul>
         </div>
-
         <div className='horizontal-separator--big'></div>
         <div className='vertical-line'></div>
-
-
         <div className='logical-block'>
           <h2>Relations tree</h2>
           <ul>
             {relationsTree}
           </ul>
         </div>
-
         <div className='horizontal-separator--big'></div>
-
         <Relatives />
-
       </div>
     </div>
   )

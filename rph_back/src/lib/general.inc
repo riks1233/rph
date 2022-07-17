@@ -1,11 +1,5 @@
 <?php
 
-function show_error($message)
-{
-    echo 'ERROR: ' . $message;
-    exit;
-}
-
 function request_param($param_name, $is_mandatory = true)
 {
     if (isset($_REQUEST[$param_name])) {

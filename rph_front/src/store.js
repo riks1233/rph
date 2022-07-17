@@ -3,10 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { customGet } from './general';
 import RentalPropertyListItem from './components/RentalPropertyListItem';
 
-
 const generateRelationsTreeRecursive = (jsxArray, parentChildRelations, rentalProperties, rentalPropertyId, level = 0) => {
   const indentiation = '--'.repeat(level);
-  // jsxArray.push(<li key={uuidv4()}>{indentiation} {rentalProperties[rentalPropertyId].title}</li>);
   jsxArray.push(<RentalPropertyListItem key={uuidv4()} id={rentalPropertyId}
     content={`${indentiation} ${rentalProperties[rentalPropertyId].title}`}
   />);

@@ -50,8 +50,13 @@ class Db
         try {
              static::$_pdo = new PDO($dsn, $username, $password, $options);
         } catch (\PDOException $e) {
-             throw new \PDOException($e->getMessage(), (int)$e->getCode());
-            show_error('PDO Connection error');
+            if (Config::get('display_errors', false)) {
+                throw new \PDOException($e->getMessage(), (int)$e->getCode());
+            }
+
+            // This is for demonstration purposes. Database errors should be
+            // logged somewhere secure and not get presented to the end-user.
+            respond_error('PDO Connection error');
         }
     }
 
@@ -66,8 +71,6 @@ class Db
                 throw $e;
             }
 
-            // This is for demonstration purposes. Database errors should be
-            // logged somewhere secure and not get presented to the end-user.
             respond_error('Database error: ' . $e->getMessage());
         }
         $data = static::$_statement->fetchAll($fetch_mode);

@@ -1,8 +1,8 @@
 <?php
 
 $main_config = [
-    'https_required' => false,
-    'is_dev_environment' => true,
+    'https_required' => true,
+    'is_dev_environment' => false,
     'display_errors' => false,
 
     'mysql_host' => '',

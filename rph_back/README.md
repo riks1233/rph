@@ -2,7 +2,7 @@
 
 For setup instructions read `README.md` that is located one level up.
 
-## Basic info
+# Basic info
 
 - `public/index.php` is the entry point.
 - `src/main.php` is the main file where all logic resides.
@@ -10,7 +10,7 @@ For setup instructions read `README.md` that is located one level up.
 - Database structure can be seen from `src/initial_db_structure.sql` file.
   - There are some test data inserts in that file. Delete them for clean start.
 
-## API
+# API
 
 See `src/main.php` for code. API endpoints are chosen with switch statement. All API endpoints return JSON strings (except `/print_tree`) with specific structure:
 
@@ -20,7 +20,7 @@ See `src/main.php` for code. API endpoints are chosen with switch statement. All
         'data' => $data, // any data, typically array.
     ]);
 
-### List of endpoints
+## List of endpoints
 
 - GET: `/print_tree` - Echo out the dependency tree.
 - GET: `/get_tree` - Return the list of dependencies.

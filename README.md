@@ -1,4 +1,4 @@
-This is a rental properties hometask written in vanilla PHP, React and which uses MySQL database.
+This is the rental properties hometask written in vanilla PHP, MySQL and React.
 
 # Setup instructions
 
@@ -7,7 +7,7 @@ The thing was developed on Windows using [WampServer](https://wampserver.com/en)
 ## Back-end portion
 
 - Run WampServer.
-- Create a WampServer virtual host for this project. Video tutorial on WampServer vhost addition: https://www.youtube.com/watch?v=PoBvZZmt9Hs
+- Create a WampServer virtual host for this project. Video tutorial on WampServer virtual host addition: https://www.youtube.com/watch?v=PoBvZZmt9Hs
   - In the "Name of the `Virtual Host`" put (**Notice the dash here, not underline**):
 
         rph-back
@@ -17,13 +17,13 @@ The thing was developed on Windows using [WampServer](https://wampserver.com/en)
         C:/wamp/www/rph_back/public
 
 - Create the project's MySQL database and import its initial structure
-  - Open the PhpMyAdmin panel through WampServer tray icon, log into the panel, open SQL query runner and run
+  - Open the PhpMyAdmin panel through WampServer tray icon, log into the panel (Default user is `root` without password), open SQL query runner and run
 
-        CREATE DATABASE rental_properties_hometask
+        CREATE DATABASE rental_properties_hometask;
 
   - Import the `initial_db_structure.sql` SQL statements into the `rental_properties_hometask` database.
 
-  In PhpMyAdmin panel, choose `rental_properties_hometask` database, open SQL query runner, copy and paste `initial_db_structure.sql` file contents into there and run the query.
+    In PhpMyAdmin panel, choose `rental_properties_hometask` database, open SQL query runner, copy and paste `initial_db_structure.sql` file contents into there and run the query.
 - Create `rph_back/config/config.inc` file from `rph_back/config/config.inc.dist` template file and configure the former as needed.
 
       cp rph_back/config/config.inc.dist rph_back/config/config.inc
@@ -32,24 +32,32 @@ The thing was developed on Windows using [WampServer](https://wampserver.com/en)
 
       'https_required' => false,
       'is_dev_environment' => true,
+      'display_errors' => false,
 
       'mysql_host' => 'localhost',
       'mysql_dbname' => 'rental_properties_hometask',
       'mysql_username' => 'root',
       'mysql_password' => '',
 
+      // List of allowed origins (CORS policy).
+      'access_control_allowed_origins' => [
+          'http://localhost:3000',
+          'http://localhost:8000',
+      ],
+
 - The back-end portion should now be accessible from the browser (WampServer might need a full restart). Try requesting
 
-      http://rental-properties-hometask-backend/show_all
+      http://rph-back/
+      http://rph-back/print_tree
 
 ## Front-end portion
 
 - Create `rph_front/.env` file from `rph_front/.env.dist` template file and configure the former as needed.
 - Install npm dependencies and start the React project in development mode.
 
-      `cd rph_front`
-      `npm install`
-      `npm start`
+      cd rph_front
+      npm install
+      npm start
 
 - And that should be it. Open the app in browser if it didn't open by itself.
 

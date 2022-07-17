@@ -62,21 +62,17 @@ class Db
             static::$_statement = static::$_pdo->prepare($sql);
             static::$_statement->execute($params);
         } catch (Exception $e) {
-
-            if (Config::get('is_dev_environment', false)) {
+            if (Config::get('display_errors', false)) {
                 throw $e;
             }
 
-            respond_error('Database error.');
+            // This is for demonstration purposes. Database errors should be
+            // logged somewhere secure and not get presented to the end-user.
+            respond_error('Database error: ' . $e->getMessage());
         }
         $data = static::$_statement->fetchAll($fetch_mode);
 
         return $data;
-    }
-
-    public static function select_and_group_by_first_param(array $params, string $table)
-    {
-        return array_map('reset', static::$_pdo->query("SELECT " . implode(',', $params) . " FROM " . $table)->fetchAll(PDO::FETCH_GROUP | PDO::FETCH_ASSOC));
     }
 
     public static function last_insert_id()

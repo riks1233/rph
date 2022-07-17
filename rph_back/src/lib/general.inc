@@ -13,7 +13,7 @@ function request_param($param_name, $is_mandatory = true)
     }
 
     if ($is_mandatory) {
-        show_error('Bad or missing request parameter');
+        respond_error("Bad or missing request parameter [$param_name]");
     }
 
     return null;
@@ -48,6 +48,15 @@ function respond(int $success, string $error_msg, array $data)
         'data' => $data,
     ]);
     exit;
+}
+
+function should_be_post_request()
+{
+    if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+        return;
+    }
+
+    respond_error('Bad request method');
 }
 
 ?>

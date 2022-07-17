@@ -1,13 +1,352 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Nunito regular */
+@font-face {
+    font-family: "Nunito";
+    src: url("../public/fonts/Nunito-Light.eot");
+    src: url("../public/fonts/Nunito-Light.eot?#iefix") format('embedded-opentype'),
+         url("../public/fonts/Nunito-Light.woff2") format('woff2'),
+         url("../public/fonts/Nunito-Light.woff") format('woff'),
+         url("../public/fonts/Nunito-Light.ttf") format('truetype');
+    font-weight: 200;
+    font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    /* Prevent scrollbar from repositioning web page */
+    overflow-y: scroll;
 }
+
+.bold-text {
+    font-weight: 600;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 28px;
+    padding: 8px;
+    background-color: #eee;
+    border-radius: 12px;
+}
+
+h2 {
+    font-weight: 200;
+    font-size: 24px;
+}
+
+h3 {
+    font-weight: 200;
+    font-size: 20px;
+}
+
+form {
+    margin: 0;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 300px; */
+    font-size: 16px;
+	font-family: 'Nunito', sans-serif, Arial, Helvetica;
+    margin-bottom: 40px;
+}
+
+.main-container {
+    min-width: 480px;
+	max-width: 1140px;
+	margin: auto;
+	padding: 0 20px;
+	padding-top: 60px;
+}
+
+.row-flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center-items {
+    align-items: center;
+    justify-content: center;
+}
+
+.logical-block {
+    min-width: 320px;
+    max-width: 320px;
+    /* min-height: 500px;
+    max-height: 500px; */
+    overflow-x: auto;
+    white-space: nowrap;
+
+}
+
+.ParentAssignForm {
+    flex: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+
+.align-start {
+    align-items: flex-start;
+}
+
+.column-flex-container {
+    display:flex;
+    flex-direction: column;
+}
+
+.login-form-container {
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.vertical-separator--huge {
+    margin-top: 100px;
+}
+
+.vertical-separator--large {
+    margin-top: 80px;
+}
+
+.vertical-separator--big {
+    margin-top: 60px;
+}
+
+.vertical-separator--medium {
+    margin-top: 40px;
+}
+
+.vertical-separator--small {
+    margin-top: 20px;
+}
+
+.vertical-separator--tiny {
+    margin-top: 10px;
+}
+
+.horizontal-separator--huge {
+    display: inline;
+    margin-right: 100px;
+}
+
+.horizontal-separator--big {
+    display: inline;
+    margin-right: 60px;
+}
+
+.horizontal-separator--medium {
+    display: inline;
+    margin-right: 40px;
+}
+
+.horizontal-separator--small {
+    display: inline;
+    margin-right: 20px;
+}
+
+.horizontal-separator--tiny {
+    display: inline;
+    margin-right: 10px;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+a {color:#2169db;}         /* Unvisited link  */
+a:visited {color:#2169db;} /* Visited link    */
+a:hover {color:#4d92ff;}   /* Mouse over link */
+a:active {color:#08419c;}  /* Selected link   */
+
+a.button {color: white;}         /* Unvisited link  */
+a.button:visited {color: white;} /* Visited link    */
+a.button:hover {color: white;}   /* Mouse over link */
+a.button:active {color: white;}  /* Selected link   */
+
+.button, button {
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    background-color: #007eff;
+    color: white;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: 'Nunito', sans-serif, Arial, Helvetica;
+}
+
+.button.hollow--red, button.hollow--red {
+    background-color: transparent;
+    color: #d11111;
+	font-family: 'Nunito', sans-serif, Arial, Helvetica;
+}
+
+.button.hollow--red:hover, button.hollow--red:hover {
+    text-decoration: underline;
+}
+
+/* Removes blue background for autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+	box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+input, input:focus {
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    outline: none;
+	font-family: 'Nunito', sans-serif, Arial, Helvetica;
+}
+
+
+.relative-container {
+    position: relative;
+}
+
+.RentalPropertyListItem {
+    /* font-size: 16px; */
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: 2px;
+    /* background-color: #007eff; */
+    /* color: white; */
+    text-decoration: none;
+    /* overflow: hidden; */
+    white-space: nowrap;
+    font-family: 'Nunito', sans-serif, Arial, Helvetica;
+}
+
+.RentalPropertyListItem:hover {
+    background-color: #4d92ff;
+    color: white;
+}
+
+.RelativesTitle {
+    color: #007eff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 16px;
+}
+
+select, select:focus {
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 16px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    outline: none;
+	font-family: 'Nunito', sans-serif, Arial, Helvetica;
+    /* appearance:none; */
+}
+
+input[type=submit] {
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+}
+
+input[type=submit]:active {
+    background-color: #bbb;
+}
+
+
+/* Custom checkbox taken from: https://www.w3schools.com/howto/howto_css_custom_checkbox.asp */
+/* The checkbox container */
+.checkbox-container {
+    display: block;
+    position: relative;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 28px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 28px;
+    width: 28px;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 28px;
+width: 28px;
+border: 1px solid #bbb;
+border-radius: 6px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+background-color: #007eff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+left: 10px;
+top: 6px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+

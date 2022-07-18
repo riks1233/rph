@@ -28,6 +28,6 @@ See `src/main.php` for code. API endpoints are chosen with switch statement. All
 - GET: `/get_all` - Return the list of all rental properties.
 - GET: `/get_relatives_of?rental_property_id=<int>` - Return the "flat" list of specified rental property relatives.
 - POST: `/create_new?title=<string>&shareable=<1 or 0>` - Create new rental property and insert it into the database.
-- POST: `assign_parent?rental_property_id=<int>&parent_id=<int>` - Assign the specified parent to the specified rental property.
+- POST: `/assign_parent?rental_property_id=<int>&parent_id=<int>` - Assign the specified parent to the specified rental property.
   - Shareable rental properties can be assigned many parents.
   - Non-shareable rental properties can be assigned only one parent. So when assigning a new parent to a non-shareable rental property, then we "move" it to a new place.

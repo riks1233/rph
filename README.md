@@ -28,7 +28,7 @@ The thing was developed on Windows using [WampServer](https://wampserver.com/en)
 
       cp rph_back/config/config.inc.dist rph_back/config/config.inc
 
-  Default user is `root` without password. Host is `localhost`. Hence, dev instance config should look like this:
+  For WampServer MySQL, default user is `root` without password. Host is `localhost`. Hence, dev instance config should look like this:
 
       'https_required' => false,
       'is_dev_environment' => true,

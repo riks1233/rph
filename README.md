@@ -45,6 +45,12 @@ The thing was developed on Windows using [WampServer](https://wampserver.com/en)
           'http://localhost:8000',
       ],
 
+- Create logs directory in project directory and create logs/php-error.log file.
+
+      mkdir logs
+      touch logs/php-error.log
+      chmod 600 logs/php-error.log
+
 - The back-end portion should now be accessible from the browser (WampServer might need a full restart). Try requesting
 
       http://rph-back/

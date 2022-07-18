@@ -2,7 +2,13 @@
 
 require_once 'lib/autoloader.inc';
 require_once 'lib/general.inc';
-require_once 'config.php';
+
+// Set up configuration from $main_config array.
+if ( ! is_file(ROOT_PATH . '/config/config.inc')) {
+    exit('Not configured.');
+}
+require_once 'config/config.inc';
+Config::update($main_config);
 
 ini_set('error_log', ROOT_PATH . 'logs/php-error.log');
 

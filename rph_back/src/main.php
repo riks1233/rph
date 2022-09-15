@@ -268,7 +268,10 @@ function get_all_rental_properties() : array
                 shareable
             FROM rental_properties
     ";
-    return array_map('reset', Db::execute($sql, [], PDO::FETCH_GROUP));
+    $data = Db::execute($sql, [], PDO::FETCH_GROUP | PDO::FETCH_UNIQUE);
+    // Does not work as of PHP 8.
+    // array_map('reset', $data);
+    return $data;
 }
 
 /**

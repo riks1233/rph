@@ -53,4 +53,11 @@ function should_be_post_request()
     respond_error('Bad request method');
 }
 
+function pre_print(mixed $var)
+{
+    echo '<pre>';
+    print_r($var);
+    echo '</pre>';
+}
+
 ?>
